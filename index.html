@@ -24,7 +24,7 @@ h1 {
     position: relative; 
     text-align: center;
     font-size: 24px;
-    margin-top: 20px;
+    margin-top: 0px;
     z-index: 1100; 
    background-color: white; 
     padding: 10px; 
@@ -78,7 +78,7 @@ z-index: 1000;
             highlightLayer.openPopup();
         }
         var map = L.map('map', {
-            zoomControl:false, maxZoom:28, minZoom:1
+            zoomControl:false, maxZoom:28, minZoom:1, z-index: 1200
         })
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
