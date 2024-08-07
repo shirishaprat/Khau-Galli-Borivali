@@ -18,11 +18,11 @@
             margin: 0;
         }
         </style>
-        <title></title>
+        <title>A GUIDE TO BORIVALI</title>
     </head>
     <body>
-        <div id="map">
-        </div>
+        <div id="map"></div>
+        <img src="images/legend.png" alt="Legend" style="position:absolute; top:10px; right:10px; z-index: 1000;">
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
@@ -217,13 +217,13 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td class="visible-with-data" id="group_du11"colspan="2"><strong>group_du11</strong><br />' + (feature.properties['group_du11'] !== null ? autolinker.link(feature.properties['group_du11'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="NAME"colspan="2"><strong>NAME</strong><br />' + (feature.properties['NAME'] !== null ? autolinker.link(feature.properties['NAME'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="field_19"colspan="2"><strong>field_19</strong><br />' + (feature.properties['field_19'] !== null ? autolinker.link(feature.properties['field_19'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="NEARBY"colspan="2"><strong>NEARBY</strong><br />' + (feature.properties['NEARBY'] !== null ? autolinker.link(feature.properties['NEARBY'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Item Sold"colspan="2"><strong>Item Sold</strong><br />' + (feature.properties['Item Sold'] !== null ? autolinker.link(feature.properties['Item Sold'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="NEARBY AC1"colspan="2"><strong>NEARBY AC1</strong><br />' + (feature.properties['NEARBY AC1'] !== null ? autolinker.link(feature.properties['NEARBY AC1'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -234,11 +234,11 @@
         }
 
         function style_kobo_2_0(feature) {
-            switch(String(feature.properties['Item Sold'])) {
-                case 'Clothes':
+            switch(String(feature.properties['NEARBY'])) {
+                case '6':
                     return {
                 pane: 'pane_kobo_2',
-                radius: 5.2,
+                radius: 10.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -247,14 +247,14 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,32,77,1.0)',
+                fillColor: 'rgba(166,206,227,1.0)',
                 interactive: true,
             }
                     break;
-                case 'Clothes, Accessories, Electronics, Footwear':
+                case 'MALL':
                     return {
                 pane: 'pane_kobo_2',
-                radius: 5.2,
+                radius: 10.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -263,46 +263,14 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(65,77,107,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Sweets, Frasan':
-                    return {
-                pane: 'pane_kobo_2',
-                radius: 5.2,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(125,124,120,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Flowers, Vegetables, Acessories':
-                    return {
-                pane: 'pane_kobo_2',
-                radius: 5.2,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(190,175,111,1.0)',
+                fillColor: 'rgba(178,223,138,1.0)',
                 interactive: true,
             }
                     break;
                 default:
                     return {
                 pane: 'pane_kobo_2',
-                radius: 5.2,
+                radius: 10.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -311,7 +279,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,234,70,1.0)',
+                fillColor: 'rgba(251,154,153,1.0)',
                 interactive: true,
             }
                     break;
@@ -332,7 +300,7 @@
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_kobo_2_0(feature));
+                return L.circleMarker(latlng, style_kobo_2_0(feature));
             },
         });
         bounds_group.addLayer(layer_kobo_2);
