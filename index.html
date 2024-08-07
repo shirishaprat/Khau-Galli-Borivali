@@ -17,12 +17,20 @@
             padding: 0;
             margin: 0;
         }
+        #legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
         </style>
         <title>A GUIDE TO BORIVALI</title>
     </head>
     <body>
         <div id="map"></div>
-        <img src="images/legend.png" alt="Legend" style="position:absolute; top:10px; right:10px; z-index: 1000;">
+        <!-- Add Legend Image -->
+        <img id="legend" src="images/legend.png" alt="Legend">
+        <!-- Existing script and map code -->
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
@@ -185,7 +193,6 @@
         }
         map.createPane('pane_qqqqq_1');
         map.getPane('pane_qqqqq_1').style.zIndex = 401;
-        map.getPane('pane_qqqqq_1').style['mix-blend-mode'] = 'normal';
         var layer_qqqqq_1 = new L.geoJson(json_qqqqq_1, {
             attribution: '',
             interactive: true,
