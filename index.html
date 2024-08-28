@@ -19,7 +19,6 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-display: flex; 
 	background-color: #A28089;
 z-index: 0; 
   
@@ -30,11 +29,13 @@ body {
 }
 
 #map {
-   width: 99%; 
-height: 80%;
-    margin: 0; 
-    border: 2px white; 
-    position: absolute;
+    width: 99%; 
+    height: 80%;
+    border: 2px solid white; /* Corrected to solid border */
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half of its own size */
     z-index: 0; 
 }
 
